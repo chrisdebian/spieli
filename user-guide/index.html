@@ -514,6 +514,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#playground-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playground themes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#standalone-pitches-layer" class="md-nav__link">
     <span class="md-ellipsis">
       Standalone pitches layer
@@ -1644,6 +1653,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#playground-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playground themes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#standalone-pitches-layer" class="md-nav__link">
     <span class="md-ellipsis">
       Standalone pitches layer
@@ -1747,10 +1765,11 @@
 <p>The colours reflect the OSM data, not the real-world quality of the playground.</p>
 <h2 id="finding-playgrounds">Finding playgrounds<a class="headerlink" href="#finding-playgrounds" title="Permanent link">&para;</a></h2>
 <p><strong>Search:</strong> Type a place name, street, or city into the search box (top bar). The map moves to the matching location.</p>
-<p><strong>My location:</strong> Tap the location button to centre the map on your current position.</p>
+<p><strong>My location:</strong> Tap the location button to centre the map on your current position. Your position is shown as a pulsing blue dot; at high zoom a translucent circle indicates the GPS accuracy. If your browser already granted location permission, spieli auto-locates on page load (unless you opened a deeplink or region link).</p>
 <blockquote>
 <p><strong>Note:</strong> Geolocation requires HTTPS and your browser's permission. If the button does nothing, check your browser's location settings.</p>
 </blockquote>
+<p><strong>Region links:</strong> Visit a region by name in the URL — e.g. <code>spieli.eu/fulda</code> frames the map on Fulda. spieli geocodes the single path segment via Nominatim and pans to its bounding box (works in both standalone and hub mode). Share these links like any other URL.</p>
 <h2 id="filters">Filters<a class="headerlink" href="#filters" title="Permanent link">&para;</a></h2>
 <p>Open the filter panel to show only playgrounds that match your needs:</p>
 <table>
@@ -1802,6 +1821,18 @@
 <td>A basketball court</td>
 </tr>
 <tr>
+<td>Fenced</td>
+<td>A fence around the playground (<code>barrier=fence</code>)</td>
+</tr>
+<tr>
+<td>Dogs allowed</td>
+<td>Dogs are permitted (<code>dog=yes</code>)</td>
+</tr>
+<tr>
+<td>With shade</td>
+<td>Shaded areas (<code>shade=yes</code>)</td>
+</tr>
+<tr>
 <td>Exclude private</td>
 <td>Hide access-restricted playgrounds</td>
 </tr>
@@ -1838,12 +1869,23 @@
 <ul>
 <li>Name, operator, opening hours (when mapped)</li>
 <li>Surface type and size</li>
-<li>Equipment list — devices, pitches, benches, and their sub-attributes</li>
+<li>Status pills — completeness, data age, and (when tagged) a shade pill (Shaded / No shade) plus baby / toddler suitability</li>
+<li>Theme highlight — a symbol for playgrounds with a theme, such as a ship or castle (see <a href="#playground-themes">Playground themes</a>)</li>
+<li>Equipment list — devices, pitches, benches, and their sub-attributes, including each item's surface when tagged</li>
 <li>Street-level photos (from Panoramax, when available)</li>
 <li>Community reviews (from Mangrove.reviews, when available)</li>
 <li>Nearby POIs — toilets, cafés, bus stops, and pharmacies within 500 m</li>
+<li>A "Take me there" button that opens navigation to the playground (geo: URL on mobile, OSM directions on desktop)</li>
 <li>A "Contribute data" link to add or improve information in OpenStreetMap via MapComplete</li>
 </ul>
+<h2 id="playground-themes">Playground themes<a class="headerlink" href="#playground-themes" title="Permanent link">&para;</a></h2>
+<p>Some playgrounds have a theme — they are built around a motif like a ship, castle, or octopus. When OpenStreetMap records a theme for a playground, spieli highlights it in the detail panel:</p>
+<ul>
+<li>A <strong>banner</strong> near the top ("Ship-themed playground") when the whole playground is themed.</li>
+<li>A <strong>symbol</strong> next to the "Equipment" heading, and beside individual pieces of equipment, for themed devices.</li>
+</ul>
+<p>To keep the highlight meaningful, spieli only shows a curated set of recognised whole-playground themes: ship, castle, spider web, water, adventure, rocket, dragon, octopus, and circus. Common animal spring-rider shapes (a horse or duck rocker) are <em>not</em> treated as playground themes, since almost any spring rider can take one of those shapes.</p>
+<p>Themes come straight from the <code>playground:theme</code> tag in OpenStreetMap — you can add or correct one via the "Contribute data" link. Themes are shown only in the detail panel, not on the map.</p>
 <h2 id="standalone-pitches-layer">Standalone pitches layer<a class="headerlink" href="#standalone-pitches-layer" title="Permanent link">&para;</a></h2>
 <p>Enable "Standalone pitches" in the filter panel's Layers section to see sports pitches that are not part of any playground (football fields, basketball courts, skate parks, etc.).</p>
 <h2 id="deeplinks">Deeplinks<a class="headerlink" href="#deeplinks" title="Permanent link">&para;</a></h2>
